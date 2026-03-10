@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "845204185311",
+    "project_id": "al-falah-somiti",
+    "storage_bucket": "al-falah-somiti.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:845204185311:android:5fc587f8dac807848b096a",
+        "android_client_info": {
+          "package_name": "com.example.alfalahsomiti"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDufuPqn7S4yjsm4T9RLmi-xOZypF8yhtM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
