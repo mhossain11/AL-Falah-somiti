@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../auth/widgets/text_field.dart';
 import '../../../cachehelper/toast.dart';
@@ -73,24 +74,24 @@ class _EditDataScreenState extends State<EditDataScreen> {
           Card(
             elevation: 4,
             shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12)),
+                borderRadius: BorderRadius.circular(12.r)),
             child: ListTile(
               title: Text(widget.name),
               subtitle: Text(widget.email),
               trailing: Text("ID: ${widget.userId}"),
             ),
           ),
-          SizedBox(height: 20,),
+          SizedBox(height: 20.h,),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0.r),
             child: CustomTextField(
               controller: _amountController,
               labelText: 'Amount',),
           ),
-          SizedBox(height: 20,),
+          SizedBox(height: 20.h,),
           Container(
-            padding:EdgeInsets.all(5),
-            width: 200,
+            padding:EdgeInsets.all(5.r),
+            width: 200.w,
             child: ElevatedButton(onPressed:()async{
               _updateMoney();
               await _logService.addLog(

@@ -2,6 +2,7 @@
 import 'package:alfalahsomiti/auth/screen/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import '../../admin/home/screen/adminhome_screen.dart';
 import '../../cachehelper/chechehelper.dart';
@@ -103,13 +104,13 @@ class _LoginScreenState extends State<LoginScreen> {
             key: _formKey,
             child: SizedBox(
               height: MediaQuery.of(context).size.height,
-              child: Padding(padding: EdgeInsets.all(10),
+              child: Padding(padding: EdgeInsets.all(10.r),
               child: Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(top: 10.0,left: 8,right: 8),
+                    padding:  EdgeInsets.only(top: 10.0.r,left: 8.r,right: 8.r),
                     child: Image.asset('assets/images/alfalah.png',
-                      fit: BoxFit.fitHeight,height: 200,width: 200,),
+                      fit: BoxFit.fitHeight,height: 200.h,width: 200.w,),
                   ),
                   SizedBox(
                     width: double.infinity,
@@ -117,13 +118,13 @@ class _LoginScreenState extends State<LoginScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text('Create an',style: TextStyle(color: Colors.green,
-                            fontSize: 25,fontWeight: FontWeight.w200),),
+                            fontSize: 25.sp,fontWeight: FontWeight.w200),),
                         Text(' account',style: TextStyle(color: Colors.red,
-                            fontSize: 25,fontWeight: FontWeight.w200),),
+                            fontSize: 25.sp,fontWeight: FontWeight.w200),),
                       ],
                     ),
                   ),
-                  SizedBox(height: 20,),
+                  SizedBox(height: 20.h,),
                   Center(child: CustomTextField(
                     controller: emailController,
                     autofillHints: const [AutofillHints.email],
@@ -145,7 +146,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     return null;
 
                   },labelText: 'Email',)),
-                  SizedBox(height: 10,),
+                  SizedBox(height: 10.h,),
                   Center(child: CustomTextFieldPassword(
                     controller: passwordController,
                     autofillHints: const [AutofillHints.password],
@@ -167,7 +168,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
                     return null; // ✅ valid
                   },labelText: 'Password',)),
-                  SizedBox(height: 10,),
+                  SizedBox(height: 10.h,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
@@ -180,11 +181,11 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                           );
                         },
-                        child: const Text(
+                        child: Text(
                           "Forgot Password?",
                           style: TextStyle(
                             color: Colors.blue,
-                            fontSize: 16,
+                            fontSize: 16.sp,
                             fontWeight: FontWeight.w400,
                             decoration: TextDecoration.underline,
                           ),
@@ -193,30 +194,30 @@ class _LoginScreenState extends State<LoginScreen> {
                     ],
                   ),
 
-                  SizedBox(height: 10,),
+                  SizedBox(height: 10.h,),
                   isLoading? Center(child: CircularProgressIndicator(),):
                   Center(
                     child: SizedBox(
-                      width: 150,
+                      width: 150.w,
                       child: SizedBox(
-                        width: 150,
+                        width: 150.w,
                         child: ElevatedButton(
                             onPressed:login,
                             child: Text('Login')),
                       ),
                     ),
                   ),
-                  SizedBox(height: 20,),
+                  SizedBox(height: 20.h,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Text('Don\'t have an account?',style: TextStyle(
-                          fontSize: 18,color: Colors.grey),),
+                          fontSize: 18.sp,color: Colors.grey),),
                       TextButton(onPressed: (){
                             Navigator.push(context, MaterialPageRoute(
                                 builder: (context)=>RegisterScreen()),);
                       }, child: Text('Sign Up',style: TextStyle(color: Colors.blue,
-                          fontSize: 18,letterSpacing: -1))
+                          fontSize: 18.sp,letterSpacing: -1))
                       ),
                     ],
                   )

@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
 
 import '../../../auth/widgets/text_field.dart';
@@ -103,7 +104,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(16),
+          padding:  EdgeInsets.all(16.r),
           child: Form(
             key: _formKey,
             child: Column(
@@ -114,7 +115,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             alignment: Alignment.bottomRight,
               children: [
                 CircleAvatar(
-                  radius: 60,
+                  radius: 60.r,
                   backgroundImage: _selectedImage != null
                       ? FileImage(_selectedImage!)
                       : (_profileImageUrl != null && _profileImageUrl!.isNotEmpty)
@@ -133,15 +134,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           color: Colors.blue,
                           shape: BoxShape.circle,
                         ),
-                        child: const Icon(Icons.camera_alt,
-                            color: Colors.white, size: 20),
+                        child:  Icon(Icons.camera_alt,
+                            color: Colors.white, size: 20.sp),
                       ),
                     ),
                   ),
               ],
             ),
           ),
-                const SizedBox(height: 10),
+                 SizedBox(height: 10.h),
                 CustomTextField(
                   controller: _nameController,
                   labelText: 'Name',
@@ -149,20 +150,20 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   validator: (value) =>
                   value!.isEmpty ? 'Please enter your name' : null,
                 ),
-                const SizedBox(height: 12),
+                 SizedBox(height: 12.h),
                   CustomTextField(
                     controller: _emailController,
                     labelText: 'Email',
                     enabled:  false,
                   ),
-                const SizedBox(height: 12),
+                 SizedBox(height: 12.h),
                 CustomTextField(
                   controller: _adminIdController,
                   labelText: 'Admin Id',
                   enabled:  false,
                 ),
         
-                const SizedBox(height: 12),
+                 SizedBox(height: 12.h),
                 CustomTextField(
                   controller:_phoneController,
                   labelText: 'Cell Number',
@@ -170,13 +171,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   validator: (value) =>
                   value!.isEmpty ? 'Please enter your phone number' : null,
                 ),
-                const SizedBox(height: 12),
+                 SizedBox(height: 12.h),
                 CustomTextField(
                   controller:_nidController,
                   labelText: 'NID',
                   enabled:  false,
                 ),
-                const SizedBox(height: 12),
+                 SizedBox(height: 12.h),
                 CustomTextField(
                   controller:_addressController,
                   labelText: 'Address',
@@ -184,7 +185,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   validator: (value) =>
                   value!.isEmpty ? 'Please enter your address' : null,
                 ),
-                const SizedBox(height: 12),
+                 SizedBox(height: 12.h),
                 CustomTextField(
                   controller:_birthdateController,
                   labelText: 'Date of Birth',
@@ -192,13 +193,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   validator: (value) =>
                   value!.isEmpty ? 'Please enter your birthdate' : null,
                 ),
-                const SizedBox(height: 12),
+                 SizedBox(height: 12.h),
                 CustomTextField(
                   controller:_nomineeNameController,
                   labelText: 'Nominee Name',
                   enabled:  false,
                 ),
-                const SizedBox(height: 12),
+                 SizedBox(height: 12.h),
                 CustomTextField(
                   controller:_nomineeRelationController,
                   labelText: ' Relation with Applicant',

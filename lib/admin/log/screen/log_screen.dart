@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import '../../../cachehelper/chechehelper.dart'; // তোমার CacheHelper path
 
@@ -70,19 +71,19 @@ class LogScreen extends StatelessWidget {
                       final datetime = (log['datetime'] as Timestamp).toDate();
           
                       return Card(
-                        margin: const EdgeInsets.symmetric(vertical: 8),
+                        margin: EdgeInsets.symmetric(vertical: 8.r),
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular(12.r),
                         ),
                         elevation: 3,
                         child: ListTile(
-                          contentPadding: const EdgeInsets.all(12),
+                          contentPadding:  EdgeInsets.all(12.r),
                           //name
                           title: Text(
                             name,
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontWeight: FontWeight.bold,
-                              fontSize: 16,
+                              fontSize: 16.sp,
                             ),
                           ),
                           subtitle: Column(
@@ -90,14 +91,14 @@ class LogScreen extends StatelessWidget {
                             children: [
                               Text(email),
                               Text(userid),
-                              const SizedBox(height: 4),
+                               SizedBox(height: 4.h),
                               Text('Old: $oldData'),
                               Text('New: $newData'),
                               Text('message: $message',style: TextStyle(color: Colors.red),),
-                              const SizedBox(height: 6),
+                               SizedBox(height: 6.h),
                               Text(
                                 'Time: ${  DateFormat('dd/MM/yyyy  hh:mm a').format(datetime)}',
-                                style: const TextStyle(fontSize: 12, color: Colors.grey),
+                                style:  TextStyle(fontSize: 12.sp, color: Colors.grey),
                               ),
                             ],
                           ),

@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../cachehelper/toast.dart';
 import '../../../res/apptextstyle.dart';
@@ -35,11 +36,11 @@ class UserListScreen extends StatelessWidget {
                 color: Colors.green.shade50,
                 child: SizedBox(
                     width: double.infinity,
-                    height: 30,
+                    height: 30.h,
                     child: Center(child: Text('User Length:${ users.length}',
                       style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),))),
               ),
-              SizedBox(height: 5,),
+              SizedBox(height: 5.h,),
               Expanded(
                 child: ListView.builder(
                   itemCount: users.length,
@@ -65,10 +66,10 @@ class UserListScreen extends StatelessWidget {
                                 )));
                           },
                           child: Card(
-                            margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                            margin:  EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
                             elevation: 2,
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(12),
+                              borderRadius: BorderRadius.circular(12.r),
                             ),
                             child: Column(
                               children: [
@@ -76,7 +77,7 @@ class UserListScreen extends StatelessWidget {
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsets.only(left: 8.0),
+                                      padding:  EdgeInsets.only(left: 8.0.r),
                                       child: Text('UserDocID: $userDocId',style: AppTextStyles.style10_bold,)
                                     ),
                                     IconButton(

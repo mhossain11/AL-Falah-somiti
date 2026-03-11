@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../auth/widgets/text_field.dart';
 import '../../../cachehelper/chechehelper.dart';
@@ -158,14 +159,14 @@ class _SavingMoneyScreenState extends State<SavingMoneyScreen> {
           children: [
             Container(
                 width: double.infinity,
-                padding: EdgeInsets.all(15),
+                padding: EdgeInsets.all(15.r),
                 child: CustomTextField(
                   maxLength: 12,
                   controller: _searchController,
                   labelText: 'User Id',)),
             Container(
-                padding:EdgeInsets.all(5),
-                width: 120,
+                padding:EdgeInsets.all(5.r),
+                width: 120.w,
                 child: ElevatedButton(onPressed: (){
                   _searchUser();
                   setState(() {
@@ -174,7 +175,7 @@ class _SavingMoneyScreenState extends State<SavingMoneyScreen> {
                 },
                     child: Text('Search',style: AppTextStyles.button,))),
 
-            const SizedBox(height: 20),
+             SizedBox(height: 20.h),
             if (_isLoading)
               const CircularProgressIndicator()
             else if (_error != null)
@@ -192,7 +193,7 @@ class _SavingMoneyScreenState extends State<SavingMoneyScreen> {
                       color:successful ? Colors.green.shade300:Colors.white,
                       elevation: 4,
                       shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12)),
+                          borderRadius: BorderRadius.circular(12.r)),
                       child: ListTile(
                         title: Text(_userData!.name),
                         subtitle: Text(_userData!.email),
@@ -205,12 +206,12 @@ class _SavingMoneyScreenState extends State<SavingMoneyScreen> {
             Visibility(
               visible: textVisible,
               child: Container(
-                padding: EdgeInsets.all(15),
+                padding: EdgeInsets.all(15.r),
                 child: Column(
                   children: [
                     CustomTextField(controller: _amountController,
                       labelText: 'Amount',),
-                    const SizedBox(height: 20),
+                     SizedBox(height: 20.h),
 
                     // 🔹 Dropdown
                     DropdownButtonFormField<String>(
@@ -227,14 +228,14 @@ class _SavingMoneyScreenState extends State<SavingMoneyScreen> {
                       decoration: InputDecoration(
                         labelText: 'Payment Method',
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(10.r),
                         ),
                       ),
                     ),
 
                     Container(
-                        padding:EdgeInsets.all(5),
-                        width: 200,
+                        padding:EdgeInsets.all(5.r),
+                        width: 200.w,
                         child: ElevatedButton(
                             onPressed: ()async{
                           _handleAddMoney();
@@ -258,8 +259,8 @@ class _SavingMoneyScreenState extends State<SavingMoneyScreen> {
                     Visibility(
                       visible: editVisible,
                       child: Container(
-                          padding:EdgeInsets.all(5),
-                          width: 200,
+                          padding:EdgeInsets.all(5.r),
+                          width: 200.w,
                           child: ElevatedButton(onPressed: (){
                             Navigator.push(context, MaterialPageRoute(builder: (context)
                             =>EditDataScreen(

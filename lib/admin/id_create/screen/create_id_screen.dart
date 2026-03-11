@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 import '../../../auth/widgets/text_field.dart';
@@ -115,15 +116,15 @@ class _CreateIdScreenState extends State<CreateIdScreen> {
         children: [
 
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0.r),
             child: CustomTextField(controller: useridController,
               labelText: 'User_ID',),
           ),
-          SizedBox(height: 10,),
+          SizedBox(height: 10.h,),
 
           // 🔹 Dropdown for Role Selection
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0.r),
             child: DropdownButtonFormField<String>(
               value: selectedRole,
               decoration: const InputDecoration(
@@ -141,19 +142,19 @@ class _CreateIdScreenState extends State<CreateIdScreen> {
               },
             ),
           ),
-          SizedBox(height: 10,),
+          SizedBox(height: 10.h,),
 
           isLoadingId? Center(child: CircularProgressIndicator(),):
          SizedBox(
-            width: 250,
+            width: 250.w,
             child: ElevatedButton(
                 onPressed:_create,
                 child: Text('Create Id')),),
-          SizedBox(height: 10,),
+          SizedBox(height: 10.h,),
           Visibility(
             visible: editView,
             child: SizedBox(
-              width: 250,
+              width: 250.w,
               child: ElevatedButton(
                   onPressed:(){
                     //debugPrint('DocId: $DocId');

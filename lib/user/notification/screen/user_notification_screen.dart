@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import '../service/user_notification_service.dart';
 
@@ -43,8 +44,8 @@ class _UserNotificationScreenState extends State<UserNotificationScreen> {
           }
 
           if (!snapshot.hasData || snapshot.data!.isEmpty) {
-            return const Center(
-              child: Text('No notifications yet.', style: TextStyle(fontSize: 16, color: Colors.grey)),
+            return  Center(
+              child: Text('No notifications yet.', style: TextStyle(fontSize: 16.sp, color: Colors.grey)),
             );
           }
 
@@ -87,7 +88,7 @@ class _UserNotificationScreenState extends State<UserNotificationScreen> {
                       },
                       child: Card(
                         elevation: 5,
-                        margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                        margin:  EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
                         child: ListTile(
                           leading: Icon(Icons.notifications_active, color: seen ? Colors.grey : Colors.blue),
                           title: Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
@@ -96,13 +97,13 @@ class _UserNotificationScreenState extends State<UserNotificationScreen> {
                             children: [
                               Text(message, maxLines: 2, overflow: TextOverflow.ellipsis),
                               Text(DateFormat('dd/MM/yyyy  hh:mm a').format(time),
-                                  style: const TextStyle(fontSize: 12, color: Colors.grey)),
+                                  style: TextStyle(fontSize: 12.sp, color: Colors.grey)),
                             ],
                           ),
                         ),
                       ),
                     );
-                  }).toList(),
+                  }),
                 ];
               }).toList(),
             ),

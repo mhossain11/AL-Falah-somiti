@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -76,22 +77,22 @@ class _UserMoneyRecordScreenState extends State<UserMoneyRecordScreen> {
                   elevation: 3,
                   color: Colors.grey.shade300,
                   child: SizedBox(
-                    width: 300,
-                    height: 30,
+                    width: 300.w,
+                    height: 30.h,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Text(
+                         Text(
                           'Total Amount:',
                           style: TextStyle(
-                              fontSize: 14,
+                              fontSize: 14.sp,
                               color: Colors.black,
                               fontWeight: FontWeight.w600),
                         ),
                         Text(
                           '${totalAmount.toStringAsFixed(0)} Tk ',
-                          style: const TextStyle(
-                              fontSize: 16,
+                          style:  TextStyle(
+                              fontSize: 16.sp,
                               color: Colors.black,
                               fontWeight: FontWeight.bold),
                         ),
@@ -113,18 +114,18 @@ class _UserMoneyRecordScreenState extends State<UserMoneyRecordScreen> {
                     DateFormat('dd MMM yyyy, hh:mm a').format(dateTime);
 
                     return Card(
-                      margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                      margin: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
                       child: Column(
                         children: [
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Padding(
-                                padding: const EdgeInsets.only(left: 8.0),
+                                padding: EdgeInsets.only(left: 8.0.r),
                                 child: Text(
                                   'MoneyID: $moneyDocId',
-                                  style: const TextStyle(
-                                      fontSize: 16, fontWeight: FontWeight.bold),
+                                  style:  TextStyle(
+                                      fontSize: 16.sp, fontWeight: FontWeight.bold),
                                 ),
                               ),
                               IconButton(
@@ -143,8 +144,8 @@ class _UserMoneyRecordScreenState extends State<UserMoneyRecordScreen> {
                             leading: const Icon(Icons.monetization_on_outlined),
                             title: Text(
                               '৳ $amount',
-                              style: const TextStyle(
-                                  fontSize: 18, fontWeight: FontWeight.bold),
+                              style: TextStyle(
+                                  fontSize: 18.sp, fontWeight: FontWeight.bold),
                             ),
                             subtitle: Text(formattedDate),
                             trailing: Text('PayMethod: $payMethod'),

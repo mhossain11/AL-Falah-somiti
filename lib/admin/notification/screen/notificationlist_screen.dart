@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import '../../../cachehelper/chechehelper.dart';
 import '../../../cachehelper/toast.dart';
@@ -116,7 +117,7 @@ class _NotificationListScreenState extends State<NotificationListScreen> {
 
               return Card(
                 elevation: 4,
-                margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                margin:  EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
                 child: InkWell(
                   onTap: () async {
                     if (!seen) await _noteService.markAsSeen(widget.adminDocId, doc.id);
@@ -143,12 +144,12 @@ class _NotificationListScreenState extends State<NotificationListScreen> {
                         Text(message, maxLines: 2, overflow: TextOverflow.ellipsis),
                         Text(
                           DateFormat('dd/MM/yyyy  hh:mm a').format(time),
-                          style: const TextStyle(fontSize: 12, color: Colors.grey),
+                          style:  TextStyle(fontSize: 12.sp, color: Colors.grey),
                         ),
                       ],
                     ),
                     trailing: IconButton(
-                      icon: const Icon(Icons.delete, color: Colors.red, size: 20),
+                      icon:  Icon(Icons.delete, color: Colors.red, size: 20.sp),
                       onPressed: () => _confirmDelete(context, doc.id),
                     ),
                   ),

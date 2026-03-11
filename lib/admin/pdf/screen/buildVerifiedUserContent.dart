@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'buildBottomActionBar.dart';
 import 'buildTransactionsList.dart';
@@ -49,13 +50,13 @@ class _BuildVerifiedUserContentState extends State<BuildVerifiedUserContent> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(Icons.error, size: 60, color: Colors.red),
-                        SizedBox(height: 10),
+                        Icon(Icons.error, size: 60.sp, color: Colors.red),
+                        SizedBox(height: 10.h),
                         Text(
                           'User data not found',
-                          style: TextStyle(fontSize: 18, color: Colors.red),
+                          style: TextStyle(fontSize: 18.sp, color: Colors.red),
                         ),
-                        SizedBox(height: 20),
+                        SizedBox(height: 20.h),
                         ElevatedButton(
                           onPressed: _resetUser,
                           child: Text('Enter Different User ID'),

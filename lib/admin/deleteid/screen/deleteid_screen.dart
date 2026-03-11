@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../cachehelper/chechehelper.dart';
 import '../../../cachehelper/toast.dart';
@@ -57,13 +58,15 @@ class _DeleteIdScreenState extends State<DeleteIdScreen> {
      email = email;
      adminId = adminId;
    });
+   return null;
  }
 
   Future<void> _deleteId() async {
     final userId = _userIdController.text.trim();
 
     if (userId.isEmpty) {
-      CustomToast().showToast(context, 'User ID is required.', Colors.red);
+      CustomToast().showToast(context, 'User ID is required.',
+          Colors.red);
       return;
     }
 
@@ -130,7 +133,7 @@ class _DeleteIdScreenState extends State<DeleteIdScreen> {
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0.r),
             child: TextField(
               controller: _userIdController,
               decoration: const InputDecoration(
@@ -139,20 +142,20 @@ class _DeleteIdScreenState extends State<DeleteIdScreen> {
               ),
             ),
           ),
-          const SizedBox(height: 16),
+           SizedBox(height: 16.h),
 
           SizedBox(
-            width: 300,
-            height: 50,
+            width: 300.w,
+            height: 50.h,
             child: ElevatedButton(
               onPressed: _deleteId,
               child: _isLoading
                   ? const CircularProgressIndicator(
                 color: Colors.white,
               )
-                  : const Text(
+                  :  Text(
                 'Delete User Id',
-                style: TextStyle(fontSize: 18),
+                style: TextStyle(fontSize: 18.sp),
               ),
             ),
           ),

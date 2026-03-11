@@ -1,6 +1,7 @@
 import 'package:badges/badges.dart' as badges;
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../auth/screen/login_screen.dart';
 import '../../../cachehelper/chechehelper.dart';
@@ -102,9 +103,9 @@ class _HomeScreenState extends State<HomeScreen> {
               PopupMenuItem(
                 value: 0,
                 child: Row(
-                  children: const [
+                  children: [
                     Icon(Icons.login, color: Colors.black),
-                    SizedBox(width: 10),
+                    SizedBox(width: 10.w),
                     Text('Logout'),
                   ],
                 ),
@@ -113,8 +114,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 value: 1,
                 child: Row(
                   children: [
-                    Image.asset('assets/images/contact-mail.png', height: 20, width: 20),
-                    const SizedBox(width: 10),
+                    Image.asset('assets/images/contact-mail.png', height: 20.h, width: 20.w),
+                     SizedBox(width: 10.w),
                     const Text('Contact'),
                   ],
                 ),
@@ -123,8 +124,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 value: 2,
                 child: Row(
                   children: [
-                    Image.asset('assets/images/coding.png', height: 20, width: 20),
-                    const SizedBox(width: 10),
+                    Image.asset('assets/images/coding.png', height: 20.h, width: 20.w),
+                     SizedBox(width: 10.w),
                     const Text('About Developer'),
                   ],
                 ),
@@ -138,37 +139,37 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             // User Name
             Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding:  EdgeInsets.all(10.0.r),
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
                   name.toUpperCase(),
-                  style: const TextStyle(
-                      fontSize: 25, color: Colors.red, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                      fontSize: 25.sp, color: Colors.red, fontWeight: FontWeight.bold),
                 ),
               ),
             ),
             // Total Amount Card
             Padding(
-              padding: const EdgeInsets.all(14.0),
+              padding: EdgeInsets.all(14.0.r),
               child: Card(
                 elevation: 5,
                 child: Container(
-                  height: 100,
-                  width: 300,
-                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                  height: 100.h,
+                  width: 300.w,
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.r)),
                   child: Center(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
                           '$totalTk Tk',
-                          style: const TextStyle(
-                              color: Colors.red, fontSize: 25, fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                              color: Colors.red, fontSize: 25.sp, fontWeight: FontWeight.bold),
                         ),
-                        const Text(
+                         Text(
                           'Balance',
-                          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                          style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.bold),
                         ),
                       ],
                     ),
@@ -178,7 +179,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             // Cards Grid
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              padding: EdgeInsets.symmetric(horizontal: 8.0.r),
               child: Column(
                 children: [
                   _buildCardRow(
@@ -206,7 +207,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       },
                     ),
                   ),
-                  const SizedBox(height: 10),
+                   SizedBox(height: 10.h),
                   _buildCardRow(
                     context,
                     first: _HomeCardData(
@@ -276,7 +277,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Row(
       children: [
         Expanded(child: _HomeCard(first)),
-        const SizedBox(width: 10),
+         SizedBox(width: 10.w),
         Expanded(child: _HomeCard(second)),
       ],
     );
@@ -305,19 +306,19 @@ class _HomeCard extends StatelessWidget {
       child: Card(
         elevation: 5,
         child: Container(
-          height: 150,
+          height: 150.h,
           decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Image.asset(data.imagePath, color: data.color, width: 80, height: 50),
+                padding: EdgeInsets.all(8.0.r),
+                child: Image.asset(data.imagePath, color: data.color, width: 80.w, height: 50.h),
               ),
-              const SizedBox(height: 5),
+               SizedBox(height: 5.h),
               Text(
                 data.title,
-                style: const TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.w500),
+                style: TextStyle(fontSize: 16.sp, color: Colors.black, fontWeight: FontWeight.w500),
               ),
             ],
           ),
@@ -347,13 +348,13 @@ class NotificationBadgeWidget extends StatelessWidget {
             final count = snapshot.data ?? 0;
             return badges.Badge(
               showBadge: count > 0,
-              badgeContent: Text('$count', style: const TextStyle(color: Colors.white, fontSize: 10)),
+              badgeContent: Text('$count', style: TextStyle(color: Colors.white, fontSize: 10.sp)),
               badgeStyle: badges.BadgeStyle(
                 badgeColor: Colors.green,
-                padding: const EdgeInsets.all(6),
-                borderRadius: BorderRadius.circular(8),
+                padding: EdgeInsets.all(6.r),
+                borderRadius: BorderRadius.circular(8.r),
                 elevation: 4,
-                borderSide: const BorderSide(color: Colors.white, width: 1),
+                borderSide: BorderSide(color: Colors.white, width: 1.w),
               ),
               child: IconButton(
                 icon: const Icon(Icons.notifications),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'buildInfoRow.dart';
 
@@ -22,9 +23,9 @@ class _BuildUserInfoCardState extends State<BuildUserInfoCard> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: EdgeInsets.all(16),
+      margin: EdgeInsets.all(16.r),
       child: Padding(
-        padding: EdgeInsets.all(16),
+        padding: EdgeInsets.all(16.r),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -33,7 +34,7 @@ class _BuildUserInfoCardState extends State<BuildUserInfoCard> {
                 Text(
                   'User Information',
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 18.sp,
                     fontWeight: FontWeight.bold,
                     color: Colors.green[700],
                   ),
@@ -46,7 +47,7 @@ class _BuildUserInfoCardState extends State<BuildUserInfoCard> {
                 ),*/
               ],
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 10.h),
             BuildInfoRow('Name', widget.userData['name'] ?? 'N/A'),
             BuildInfoRow('Email', widget.userData['email'] ?? 'N/A'),
             BuildInfoRow('User ID', widget.currentUserId),

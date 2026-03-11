@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:printing/printing.dart';
 
 import '../service/pdf_service.dart';
@@ -57,7 +58,7 @@ class _BuildBottomActionBarState extends State<BuildBottomActionBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(16),
+      padding: EdgeInsets.all(16.r),
       decoration: BoxDecoration(
         color: Colors.grey[50],
         border: Border(top: BorderSide(color: Colors.grey[300]!)),
@@ -72,11 +73,11 @@ class _BuildBottomActionBarState extends State<BuildBottomActionBar> {
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.green,
                 foregroundColor: Colors.white,
-                padding: EdgeInsets.symmetric(vertical: 12),
+                padding: EdgeInsets.symmetric(vertical: 12.h),
               ),
             ),
           ),
-          SizedBox(width: 10),
+          SizedBox(width: 10.h),
           Expanded(
             child: ElevatedButton.icon(
               icon: Icon(Icons.print),
@@ -85,7 +86,7 @@ class _BuildBottomActionBarState extends State<BuildBottomActionBar> {
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue.shade300,
                 foregroundColor: Colors.white,
-                padding: EdgeInsets.symmetric(vertical: 12),
+                padding: EdgeInsets.symmetric(vertical: 12.h),
               ),
             ),
           ),

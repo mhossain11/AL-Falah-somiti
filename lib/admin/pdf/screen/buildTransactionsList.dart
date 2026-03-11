@@ -1,5 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:intl/intl.dart';
 
 class BuildTransactionsList extends StatefulWidget {
    BuildTransactionsList({super.key ,required this.currentUserId});
@@ -11,8 +13,8 @@ class BuildTransactionsList extends StatefulWidget {
 class _BuildTransactionsListState extends State<BuildTransactionsList> {
 
 
-  String _formatDate(DateTime date) {
-    return '${date.year}-${date.month.toString().padLeft(2, '0')}-${date.day.toString().padLeft(2, '0')} ${date.hour.toString().padLeft(2, '0')}:${date.minute.toString().padLeft(2, '0')}';
+  String formatDate(DateTime date) {
+    return DateFormat('yyyy-MM-dd hh:mm a').format(date);
   }
 
   @override
@@ -34,16 +36,16 @@ class _BuildTransactionsListState extends State<BuildTransactionsList> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(Icons.money_off, size: 60, color: Colors.grey),
-                SizedBox(height: 10),
+                Icon(Icons.money_off, size: 60.sp, color: Colors.grey),
+                SizedBox(height: 10.h),
                 Text(
                   'No transactions found',
-                  style: TextStyle(fontSize: 16, color: Colors.grey),
+                  style: TextStyle(fontSize: 16.sp, color: Colors.grey),
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: 10.h),
                 Text(
                   'This user has no financial transactions yet',
-                  style: TextStyle(fontSize: 12, color: Colors.grey),
+                  style: TextStyle(fontSize: 12.sp, color: Colors.grey),
                 ),
               ],
             ),
@@ -61,7 +63,7 @@ class _BuildTransactionsListState extends State<BuildTransactionsList> {
           children: [
             // Summary Cards
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 5),
+              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 5.h),
               child: Row(
                 children: [
                   // Total Transactions Card
@@ -69,21 +71,21 @@ class _BuildTransactionsListState extends State<BuildTransactionsList> {
                     child: Card(
                       color: Colors.grey[100],
                       child: Padding(
-                        padding: EdgeInsets.all(12),
+                        padding: EdgeInsets.all(12.r),
                         child: Column(
                           children: [
                             Text(
                               'Transactions',
                               style: TextStyle(
-                                fontSize: 12,
+                                fontSize: 12.sp,
                                 color: Colors.grey[600],
                               ),
                             ),
-                            SizedBox(height: 4),
+                            SizedBox(height: 4.h),
                             Text(
                               '${transactions.length}',
                               style: TextStyle(
-                                fontSize: 18,
+                                fontSize: 18.sp,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.green[700],
                               ),
@@ -93,27 +95,27 @@ class _BuildTransactionsListState extends State<BuildTransactionsList> {
                       ),
                     ),
                   ),
-                  SizedBox(width: 8),
+                  SizedBox(width: 8.w),
                   // Total Amount Card
                   Expanded(
                     child: Card(
                       color: Colors.green[50],
                       child: Padding(
-                        padding: EdgeInsets.all(12),
+                        padding: EdgeInsets.all(12.r),
                         child: Column(
                           children: [
                             Text(
                               'Total Amount',
                               style: TextStyle(
-                                fontSize: 12,
+                                fontSize: 12.sp,
                                 color: Colors.grey[600],
                               ),
                             ),
-                            SizedBox(height: 4),
+                            SizedBox(height: 4.h),
                             Text(
                               '\$${totalAmount.toStringAsFixed(2)}',
                               style: TextStyle(
-                                fontSize: 18,
+                                fontSize: 18.sp,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.green[700],
                               ),
@@ -135,13 +137,13 @@ class _BuildTransactionsListState extends State<BuildTransactionsList> {
                   final doc = transactions[index];
                   final data = doc.data() as Map<String, dynamic>;
                   final date = data['date&time'] != null
-                      ? _formatDate((data['date&time'] as Timestamp).toDate())
+                      ? formatDate((data['date&time'] as Timestamp).toDate())
                       : 'N/A';
                   final amount = data['amount']?.toString() ?? '0';
                   final paymentMethod = data['payment_method'] ?? 'N/A';
 
                   return Card(
-                    margin: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                    margin: EdgeInsets.symmetric(horizontal: 16.w, vertical: 4.h),
                     child: ListTile(
                       leading: CircleAvatar(
                         backgroundColor: Colors.green,

@@ -4,6 +4,7 @@ import 'package:badges/badges.dart' as badges;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../auth/screen/login_screen.dart';
 import '../../../cachehelper/chechehelper.dart';
@@ -66,6 +67,7 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
       name = userName;
       DocId = userDocId;
     });
+    return null;
   }
 
   void countTota() async{
@@ -150,13 +152,13 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                     badgeAnimation: badges.BadgeAnimation.scale(), // optional animation
                     badgeStyle: badges.BadgeStyle(
                       badgeColor: Colors.green,        // 🎨 background color of badge
-                      padding: EdgeInsets.all(6),    // inner padding
-                      borderRadius: BorderRadius.circular(8), // shape of badge
-                      borderSide: BorderSide(color: Colors.white, width: 1), // optional border
+                      padding: EdgeInsets.all(6.r),    // inner padding
+                      borderRadius: BorderRadius.circular(8.r), // shape of badge
+                      borderSide: BorderSide(color: Colors.white, width: 1.w), // optional border
                       elevation: 4,                  // drop shadow
                     ),
                     badgeContent: Text('$count',
-                        style: TextStyle(color: Colors.white, fontSize: 10)),
+                        style: TextStyle(color: Colors.white, fontSize: 10.sp)),
                     child: IconButton(
                       icon: Icon(Icons.notifications),
                       onPressed: () {
@@ -182,7 +184,7 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                     child: Row(
                       children: [
                         Icon(Icons.login,color: Colors.black),
-                        SizedBox(width: 10,),
+                        SizedBox(width: 10.w,),
                         Text('Logout'),
                       ],
                     )),
@@ -192,7 +194,7 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                     child: Row(
                       children: [
                         Icon(Icons.person,color: Colors.black,),
-                        SizedBox(width: 10,),
+                        SizedBox(width: 10.w,),
                         Text('Profile'),
                       ],
                     )),
@@ -200,8 +202,8 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                   value: 2,
                   child: Row(
                     children: [
-                      Image.asset('assets/images/contact-mail.png', height: 20, width: 20),
-                      const SizedBox(width: 10),
+                      Image.asset('assets/images/contact-mail.png', height: 20.h, width: 20.w),
+                       SizedBox(width: 10.w),
                       const Text('Contact'),
                     ],
                   ),
@@ -211,8 +213,8 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                   value: 3,
                   child: Row(
                     children: [
-                      Image.asset('assets/images/coding.png', height: 20, width: 20),
-                      const SizedBox(width: 10),
+                      Image.asset('assets/images/coding.png', height: 20.h, width: 20.w),
+                       SizedBox(width: 10.w),
                       const Text('About Developer'),
                     ],
                   ),
@@ -240,9 +242,9 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding:  EdgeInsets.all(8.0.r),
                       child: Text(name,style: TextStyle(
-                          fontSize: 25,color: Colors.green,
+                          fontSize: 25.sp,color: Colors.green,
                           fontWeight: FontWeight.bold
                       )),
                     ),
@@ -254,24 +256,24 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                 children: [
                   Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.all(14.0),
+                      padding:  EdgeInsets.all(14.0.r),
                       child: Card(
                         elevation: 5,
                         child: Container(
-                          height: 100,
+                          height: 100.h,
                           decoration: BoxDecoration(
                              // color: Colors.blue.shade100,
-                              borderRadius: BorderRadius.circular(10)
+                              borderRadius: BorderRadius.circular(10.r)
                           ),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(userTotal.toString(),style: TextStyle(
-                                  fontSize: 25,color: Colors.green,
+                                  fontSize: 25.sp,color: Colors.green,
                                   fontWeight: FontWeight.bold
                               ),),
                               Text('Total Members',style: TextStyle(
-                                  fontSize: 16,
+                                  fontSize: 16.sp,
                                   fontWeight: FontWeight.w700
                               ),),
                             ],
@@ -313,15 +315,15 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
 
               //Total Amount
               Padding(
-                padding: const EdgeInsets.all(14.0),
+                padding:  EdgeInsets.all(14.0.r),
                 child: Card(
                   elevation: 5,
                   child: Container(
-                    height: 100,
-                    width: 300,
+                    height: 100.h,
+                    width: 300.w,
                     decoration: BoxDecoration(
                      // color: Colors.green.shade100,
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(10.r),
                     ),
                     child: Center(
                       child: Column(
@@ -330,14 +332,14 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                           Center(
                             child: Text(
                               '$totalTk Tk',
-                              style: const TextStyle(color:Colors.green,
-                                  fontSize: 25, fontWeight: FontWeight.bold),
+                              style:  TextStyle(color:Colors.green,
+                                  fontSize: 25.sp, fontWeight: FontWeight.bold),
                             ),
                           ),
                           Center(
                             child: Text(
                               'Balance',
-                              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                              style:  TextStyle(fontSize: 18.sp, fontWeight: FontWeight.bold),
                             ),
                           ),
                         ],
@@ -362,22 +364,22 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                     child: Card(
                       elevation: 5,
                       child: Container(
-                        height: 150,
-                        width: 150,
+                        height: 150.h,
+                        width: 150.w,
                         decoration: BoxDecoration(
                           //  color: Colors.blue.shade100,
-                            borderRadius: BorderRadius.circular(10)
+                            borderRadius: BorderRadius.circular(10.r)
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Image.asset('assets/images/taka.png',
                               color: Colors.green,
-                              width: 80,
-                              height: 50,),
-                            SizedBox(height: 5,),
+                              width: 80.w,
+                              height: 50.h,),
+                            SizedBox(height: 5.h,),
                             Text('Saving Money',style: TextStyle(
-                                fontSize: 16,color: Colors.black,fontWeight: FontWeight.w500
+                                fontSize: 16.sp,color: Colors.black,fontWeight: FontWeight.w500
                             ),)
 
                           ],
@@ -385,7 +387,7 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(width: 10,),
+                  SizedBox(width: 10.w,),
                   //list button
                   GestureDetector(
                     onTap: (){
@@ -395,25 +397,25 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                     child: Card(
                       elevation: 5,
                       child: Container(
-                        height: 150,
-                        width: 150,
+                        height: 150.h,
+                        width: 150.w,
                         decoration: BoxDecoration(
                           //  color: Colors.blue.shade300,
-                            borderRadius: BorderRadius.circular(10)
+                            borderRadius: BorderRadius.circular(10.r)
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                               Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding: EdgeInsets.all(8.0.r),
                                 child: Image.asset('assets/images/userlist.png',
                                   color: Colors.green,
-                                  width: 80,
-                                  height: 50,),
+                                  width: 80.w,
+                                  height: 50.h,),
                               ),
-                            SizedBox(height: 5,),
+                            SizedBox(height: 5.h,),
                             Text('Members List',style: TextStyle(
-                                fontSize: 16,color: Colors.black,fontWeight: FontWeight.w500
+                                fontSize: 16.sp,color: Colors.black,fontWeight: FontWeight.w500
                             ),)
                           ],
                         ),
@@ -435,22 +437,22 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                     child: Card(
                       elevation: 5,
                       child: Container(
-                        height: 150,
-                        width: 150,
+                        height: 150.h,
+                        width: 150.w,
                         decoration: BoxDecoration(
                             //color: Colors.blue.shade400,
-                            borderRadius: BorderRadius.circular(10)
+                            borderRadius: BorderRadius.circular(10.r)
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Image.asset('assets/images/log.png',
                               color: Colors.green,
-                              width: 80,
-                              height: 50,),
-                            SizedBox(height: 5,),
+                              width: 80.w,
+                              height: 50.h,),
+                            SizedBox(height: 5.h,),
                             Text('Admin Log',style: TextStyle(
-                                fontSize: 16,color: Colors.black,fontWeight: FontWeight.w500
+                                fontSize: 16.sp,color: Colors.black,fontWeight: FontWeight.w500
                             ),)
 
                           ],
@@ -458,7 +460,7 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(width: 10,),
+                  SizedBox(width: 10.w,),
                   //delete button
                   GestureDetector(
                     onTap: (){
@@ -468,8 +470,8 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                     child: Card(
                       elevation: 5,
                       child: Container(
-                        height: 150,
-                        width: 150,
+                        height: 150.h,
+                        width: 150.w,
                         decoration: BoxDecoration(
                            // color: Colors.blue.shade100,
                             borderRadius: BorderRadius.circular(10)
@@ -479,11 +481,11 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                           children: [
                             Image.asset('assets/images/delete_report.png',
                               color: Colors.green,
-                              width: 80,
-                              height: 50,),
-                            SizedBox(height: 5,),
+                              width: 80.w,
+                              height: 50.h,),
+                            SizedBox(height: 5.h,),
                             Text('Delete Record',maxLines: 2,style: TextStyle(
-                                fontSize: 16,color: Colors.black,fontWeight: FontWeight.w500
+                                fontSize: 16.sp,color: Colors.black,fontWeight: FontWeight.w500
                             ),)
 
                           ],
@@ -493,7 +495,7 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                   ),
                 ],
               ),
-              SizedBox(width: 10,),
+              SizedBox(width: 10.w,),
               //Note button
               GestureDetector(
                 onTap: (){
@@ -503,22 +505,22 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                 child: Card(
                   elevation: 5,
                   child: Container(
-                    height: 150,
-                    width: 300,
+                    height: 150.h,
+                    width: 300.w,
                     decoration: BoxDecoration(
                        // color: Colors.blue.shade100,
-                        borderRadius: BorderRadius.circular(10)
+                        borderRadius: BorderRadius.circular(10.r)
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Image.asset('assets/images/notes.png',
                           color: Colors.green,
-                          width: 80,
-                          height: 50,),
-                        SizedBox(height: 5,),
+                          width: 80.w,
+                          height: 50.h,),
+                        SizedBox(height: 5.h,),
                         Text('Notice board',maxLines: 2,style: TextStyle(
-                            fontSize: 16,color: Colors.black,fontWeight: FontWeight.w500
+                            fontSize: 16.sp,color: Colors.black,fontWeight: FontWeight.w500
                         ),)
 
                       ],
@@ -538,22 +540,22 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                     child: Card(
                       elevation: 5,
                       child: Container(
-                        height: 150,
-                        width: 150,
+                        height: 150.h,
+                        width: 150.w,
                         decoration: BoxDecoration(
                           //  color: Colors.blue.shade100,
-                            borderRadius: BorderRadius.circular(10)
+                            borderRadius: BorderRadius.circular(10.r)
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Image.asset('assets/images/id.png',
                               color: Colors.green,
-                              width: 80,
-                              height: 50,),
-                            SizedBox(height: 5,),
+                              width: 80.w,
+                              height: 50.h,),
+                            SizedBox(height: 5.h,),
                             Text('User Id Create',style: TextStyle(
-                                fontSize: 16,color: Colors.black,fontWeight: FontWeight.w500
+                                fontSize: 16.sp,color: Colors.black,fontWeight: FontWeight.w500
                             ),)
 
                           ],
@@ -561,7 +563,7 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(width: 10,),
+                  SizedBox(width: 10.w,),
                   //list button
                   GestureDetector(
                     onTap: (){
@@ -571,32 +573,32 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                     child: Card(
                       elevation: 5,
                       child: Container(
-                        height: 150,
-                        width: 150,
+                        height: 150.h,
+                        width: 150.w,
                         decoration: BoxDecoration(
                           //  color: Colors.blue.shade300,
-                            borderRadius: BorderRadius.circular(10)
+                            borderRadius: BorderRadius.circular(10.r)
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding:  EdgeInsets.all(8.0.r),
                               child: Image.asset('assets/images/id_list.png',
                                 color: Colors.green,
-                                width: 80,
-                                height: 50,),
+                                width: 80.w,
+                                height: 50.h,),
                             ),
-                            SizedBox(height: 5,),
+                            SizedBox(height: 5.h,),
                             Text('User Id List',style: TextStyle(
-                                fontSize: 16,color: Colors.black,fontWeight: FontWeight.w500
+                                fontSize: 16.sp,color: Colors.black,fontWeight: FontWeight.w500
                             ),)
                           ],
                         ),
                       ),
                     ),
                   ),
-                  SizedBox(width: 10,),
+                  SizedBox(width: 10.w,),
                 ],
               ),
 
@@ -608,32 +610,32 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                 child: Card(
                   elevation: 5,
                   child: Container(
-                    height: 150,
-                    width: 150,
+                    height: 150.h,
+                    width: 150.w,
                     decoration: BoxDecoration(
                       //  color: Colors.blue.shade300,
-                        borderRadius: BorderRadius.circular(10)
+                        borderRadius: BorderRadius.circular(10.r)
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding:  EdgeInsets.all(8.0.r),
                           child: Image.asset('assets/images/delete_id.png',
                             color: Colors.green,
-                            width: 80,
-                            height: 50,),
+                            width: 80.w,
+                            height: 50.h,),
                         ),
-                        SizedBox(height: 5,),
+                        SizedBox(height: 5.h,),
                         Text('Delete Id',style: TextStyle(
-                            fontSize: 16,color: Colors.black,fontWeight: FontWeight.w500
+                            fontSize: 16.sp,color: Colors.black,fontWeight: FontWeight.w500
                         ),)
                       ],
                     ),
                   ),
                 ),
               ),
-              SizedBox(width: 10,),
+              SizedBox(width: 10.w,),
               //Note button
               GestureDetector(
                 onTap: (){
@@ -643,22 +645,22 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                 child: Card(
                   elevation: 5,
                   child: Container(
-                    height: 150,
-                    width: 300,
+                    height: 150.h,
+                    width: 300.w,
                     decoration: BoxDecoration(
                       // color: Colors.blue.shade100,
-                        borderRadius: BorderRadius.circular(10)
+                        borderRadius: BorderRadius.circular(10.r)
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Image.asset('assets/images/pdf.png',
                           color: Colors.green,
-                          width: 80,
-                          height: 50,),
-                        SizedBox(height: 5,),
+                          width: 80.w,
+                          height: 50.h,),
+                        SizedBox(height: 5.h,),
                         Text('Generate a Pdf',maxLines: 2,style: TextStyle(
-                            fontSize: 16,color: Colors.black,fontWeight: FontWeight.w500
+                            fontSize: 16.sp,color: Colors.black,fontWeight: FontWeight.w500
                         ),)
 
                       ],

@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 
@@ -69,7 +70,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
     }
   }
 
-  Future<String?> _uploadImage(File imageFile) async {
+ /* Future<String?> _uploadImage(File imageFile) async {
     try {
       final ref = FirebaseStorage.instance
           .ref()
@@ -81,7 +82,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
       debugPrint('Image upload failed: $e');
       return null;
     }
-  }
+  }*/
 
   Future<void> _saveChanges() async {
     if (_formKey.currentState!.validate()) {
@@ -152,14 +153,14 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
           : Padding(
-        padding: const EdgeInsets.all(16),
+        padding: EdgeInsets.all(16.r),
         child: SingleChildScrollView(
           child: Form(
             key: _formKey,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const SizedBox(height: 10),
+                 SizedBox(height: 10.h),
 
                 // 🔹 Profile Image
                 Center(
@@ -167,7 +168,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                     alignment: Alignment.bottomRight,
                     children: [
                       CircleAvatar(
-                        radius: 60,
+                        radius: 60.r,
                         backgroundImage: _selectedImage != null
                             ? FileImage(_selectedImage!)
                             : (_profileImageUrl != null && _profileImageUrl!.isNotEmpty)
@@ -186,15 +187,15 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                                 color: Colors.blue,
                                 shape: BoxShape.circle,
                               ),
-                              child: const Icon(Icons.camera_alt,
-                                  color: Colors.white, size: 20),
+                              child: Icon(Icons.camera_alt,
+                                  color: Colors.white, size: 20.sp),
                             ),
                           ),
                         ),
                     ],
                   ),
                 ),
-                const SizedBox(height: 20),
+                 SizedBox(height: 20.h),
 
                 // 🔹 Text Fields
                 CustomTextField(
@@ -204,50 +205,50 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                   validator: (value) =>
                   value!.isEmpty ? 'Please enter your name' : null,
                 ),
-                const SizedBox(height: 12),
+                SizedBox(height: 12.h),
                 CustomTextField(
                   controller: _emailController,
                   labelText: 'Email',
                   enabled: false,
                 ),
-                const SizedBox(height: 12),
+                 SizedBox(height: 12.h),
                 CustomTextField(
                   controller: _userIdController,
                   labelText: 'User_Id',
                   enabled: false,
                 ),
-                const SizedBox(height: 12),
+                SizedBox(height: 12.h),
                 CustomTextField(
                   controller: _phoneController,
                   labelText: 'Cell Number',
                   enabled: _isEditing,
                 ),
-                const SizedBox(height: 12),
+                 SizedBox(height: 12.h),
                 CustomTextField(
                   controller: _addressController,
                   labelText: 'Address',
                   maxLine: 2,
                   enabled: _isEditing,
                 ),
-                const SizedBox(height: 12),
+                 SizedBox(height: 12.h),
                 CustomTextField(
                   controller: _birthdateController,
                   labelText: 'Date of Birth',
                   enabled: _isEditing,
                 ),
-                const SizedBox(height: 12),
+                 SizedBox(height: 12.h),
                 CustomTextField(
                   controller: _nidController,
                   labelText: 'NID',
                   enabled: false,
                 ),
-                const SizedBox(height: 12),
+                 SizedBox(height: 12.h),
                 CustomTextField(
                   controller: _nomineeNameController,
                   labelText: 'Nominee Name',
                   enabled: false,
                 ),
-                const SizedBox(height: 12),
+                 SizedBox(height: 12.h),
                 CustomTextField(
                   controller: _nomineeRelationController,
                   labelText: ' Relation with Applicant',

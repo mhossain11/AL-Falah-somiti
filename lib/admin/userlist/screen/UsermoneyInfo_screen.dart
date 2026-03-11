@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -52,52 +53,52 @@ class UserMoneyInfoScreen extends StatelessWidget {
             return  Column(
               children: [
                 Card(
-                  margin: const EdgeInsets.all(12),
+                  margin:  EdgeInsets.all(12.r),
                   elevation: 4,
                   color: Colors.red.shade100,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
+                    borderRadius: BorderRadius.circular(12.r),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.all(16.0),
+                    padding:  EdgeInsets.all(16.0.r),
                     child: SizedBox(
                       width: double.infinity,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text('Name: $name',
-                              style: const TextStyle(
-                                  fontSize: 14, fontWeight: FontWeight.w600)),
+                              style:  TextStyle(
+                                  fontSize: 14.sp, fontWeight: FontWeight.w600)),
                           Text('User ID: $userId',
-                              style: const TextStyle(
-                                  fontSize: 14, fontWeight: FontWeight.w600)),
+                              style: TextStyle(
+                                  fontSize: 14.sp, fontWeight: FontWeight.w600)),
                           Text('Email: $email',
-                              style: const TextStyle(
-                                  fontSize: 14, fontWeight: FontWeight.w600)),
+                              style:  TextStyle(
+                                  fontSize: 14.sp, fontWeight: FontWeight.w600)),
                           Text('Cell Number: $phone',
-                              style: const TextStyle(
-                                  fontSize: 14, fontWeight: FontWeight.w600)),
+                              style:  TextStyle(
+                                  fontSize: 14.sp, fontWeight: FontWeight.w600)),
                           Text('NID: $nid',
-                              style: const TextStyle(
-                                  fontSize: 14, fontWeight: FontWeight.w600)),
+                              style:  TextStyle(
+                                  fontSize: 14.sp, fontWeight: FontWeight.w600)),
                           Text('Date of Birth: $birthdate',
-                              style: const TextStyle(
-                                  fontSize: 14, fontWeight: FontWeight.w600)),
+                              style:  TextStyle(
+                                  fontSize: 14.sp, fontWeight: FontWeight.w600)),
                           Text('Address: $address',
-                              style: const TextStyle(
-                                  fontSize: 14, fontWeight: FontWeight.w600)),
+                              style:  TextStyle(
+                                  fontSize: 14.sp, fontWeight: FontWeight.w600)),
                           Text('Nominee Name: $nomineeName',
-                              style: const TextStyle(
-                                  fontSize: 14, fontWeight: FontWeight.w600)),
+                              style:  TextStyle(
+                                  fontSize: 14.sp, fontWeight: FontWeight.w600)),
                           Text('Relation with Applicant: $nomineeRelation',
-                              style: const TextStyle(
-                                  fontSize: 14, fontWeight: FontWeight.w600)),
+                              style:  TextStyle(
+                                  fontSize: 14.sp, fontWeight: FontWeight.w600)),
                         ],
                       ),
                     ),
                   ),
                 ),
-                const SizedBox(height: 20),
+                 SizedBox(height: 20.h),
                 Expanded(child: Center(child: Text('No money record found.'))),
               ],
             );
@@ -117,46 +118,46 @@ class UserMoneyInfoScreen extends StatelessWidget {
             children: [
 
               Card(
-                margin: const EdgeInsets.all(12),
+                margin:  EdgeInsets.all(12.r),
                 elevation: 4,
                 color: Colors.green.shade100,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
+                  borderRadius: BorderRadius.circular(12.r),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.all(16.0),
+                  padding:  EdgeInsets.all(16.0.r),
                   child: SizedBox(
                     width: double.infinity,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text('Name: $name',
-                            style: const TextStyle(
-                                fontSize: 14, fontWeight: FontWeight.w600)),
+                            style:  TextStyle(
+                                fontSize: 14.sp, fontWeight: FontWeight.w600)),
                         Text('User ID: $userId',
-                            style: const TextStyle(
-                                fontSize: 14, fontWeight: FontWeight.w600)),
+                            style:  TextStyle(
+                                fontSize: 14.sp, fontWeight: FontWeight.w600)),
                         Text('Email: $email',
-                            style: const TextStyle(
-                                fontSize: 14, fontWeight: FontWeight.w600)),
+                            style:  TextStyle(
+                                fontSize: 14.sp, fontWeight: FontWeight.w600)),
                         Text('Cell Number:: $phone',
-                            style: const TextStyle(
-                                fontSize: 14, fontWeight: FontWeight.w600)),
+                            style:  TextStyle(
+                                fontSize: 14.sp, fontWeight: FontWeight.w600)),
                         Text('NID: $nid',
-                            style: const TextStyle(
-                                fontSize: 14, fontWeight: FontWeight.w600)),
+                            style: TextStyle(
+                                fontSize: 14.sp, fontWeight: FontWeight.w600)),
                         Text('Date of Birth: $birthdate',
-                            style: const TextStyle(
-                                fontSize: 14, fontWeight: FontWeight.w600)),
+                            style:  TextStyle(
+                                fontSize: 14.sp, fontWeight: FontWeight.w600)),
                         Text('Address: $address',
-                            style: const TextStyle(
-                                fontSize: 14, fontWeight: FontWeight.w600)),
+                            style:  TextStyle(
+                                fontSize: 14.sp, fontWeight: FontWeight.w600)),
                         Text('Nominee Name: $nomineeName',
-                            style: const TextStyle(
-                                fontSize: 14, fontWeight: FontWeight.w600)),
+                            style:  TextStyle(
+                                fontSize: 14.sp, fontWeight: FontWeight.w600)),
                         Text('Relation with Applicant: $nomineeRelation',
-                            style: const TextStyle(
-                                fontSize: 14, fontWeight: FontWeight.w600)),
+                            style:  TextStyle(
+                                fontSize: 14.sp, fontWeight: FontWeight.w600)),
                       ],
                     ),
                   ),
@@ -167,19 +168,19 @@ class UserMoneyInfoScreen extends StatelessWidget {
                   elevation: 3,
                   color: Colors.grey.shade300,
                   child: SizedBox(
-                    width: 300,
-                    height: 30,
+                    width: 300.w,
+                    height: 30.h,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text('Balance: ',
                           style: TextStyle(
-                              fontSize:14,
+                              fontSize:14.sp,
                               color: Colors.black,
                               fontWeight: FontWeight.w600),),
                         Text('${totalAmount.toStringAsFixed(0)} Tk ',
                           style: TextStyle(
-                              fontSize:16,
+                              fontSize:16.sp,
                               color: Colors.black,
                               fontWeight: FontWeight.bold),),
                       ],
@@ -189,7 +190,7 @@ class UserMoneyInfoScreen extends StatelessWidget {
               ),
 
 
-              const SizedBox(height: 8),
+               SizedBox(height: 8.h),
               //  Money List
               Expanded(
                 child: ListView.builder(
@@ -205,15 +206,15 @@ class UserMoneyInfoScreen extends StatelessWidget {
                     DateFormat('dd MMM yyyy, hh:mm a').format(dateTime);
 
                     return Card(
-                      margin: const EdgeInsets.symmetric(
-                          horizontal: 12, vertical: 6),
+                      margin:  EdgeInsets.symmetric(
+                          horizontal: 12.w, vertical: 6.h),
                       child: Column(
                         children: [
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Padding(
-                                padding: const EdgeInsets.only(left: 8.0),
+                                padding:  EdgeInsets.only(left: 8.0.r),
                                 child: Text('MoneyID: $moneyDocId',
                                     style: AppTextStyles.style10_bold),
 
@@ -233,11 +234,11 @@ class UserMoneyInfoScreen extends StatelessWidget {
                             leading: const Icon(Icons.monetization_on_outlined),
                             title: Text(
                               '৳ $amount',
-                              style: const TextStyle(
-                                  fontSize: 18, fontWeight: FontWeight.bold),
+                              style:  TextStyle(
+                                  fontSize: 18.sp, fontWeight: FontWeight.bold),
                             ),
-                            subtitle: Text(paymentMethod,style: const TextStyle(
-                                fontSize: 12, fontWeight: FontWeight.bold),),
+                            subtitle: Text(paymentMethod,style: TextStyle(
+                                fontSize: 12.sp, fontWeight: FontWeight.bold),),
                             trailing: Text(formattedDate)
                           ),
 

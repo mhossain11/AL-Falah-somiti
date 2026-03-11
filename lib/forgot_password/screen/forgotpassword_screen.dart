@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../service/forgotpassword_service.dart';
 
 class ForgotPasswordScreen extends StatefulWidget {
@@ -41,16 +42,16 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
     return Scaffold(
       appBar: AppBar(title: const Text("Forgot Password")),
       body: Padding(
-        padding: const EdgeInsets.all(20),
+        padding: EdgeInsets.all(20.r),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
+             Text(
               "Enter your email to reset your password",
-              style: TextStyle(fontSize: 16),
+              style: TextStyle(fontSize: 16.sp),
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: 20.h),
             TextField(
               controller: _emailController,
               autofillHints: const [AutofillHints.email],
@@ -60,7 +61,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               ),
               keyboardType: TextInputType.emailAddress,
             ),
-            const SizedBox(height: 20),
+             SizedBox(height: 20.h),
             _isLoading
                 ? const CircularProgressIndicator()
                 : ElevatedButton(

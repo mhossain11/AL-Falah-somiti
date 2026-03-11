@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../res/apptextstyle.dart';
 import '../service/id_list_service.dart';
@@ -43,15 +44,15 @@ class _IdListScreenState extends State<IdListScreen> {
               final user = users[index];
 
               return Card(
-                margin: const EdgeInsets.symmetric(
-                    horizontal: 12, vertical: 6),
+                margin:  EdgeInsets.symmetric(
+                    horizontal: 12.w, vertical: 6.h),
                 child: Column(
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(left: 8.0),
+                          padding: EdgeInsets.only(left: 8.0.r),
                           child: Text('Id record: ${user['docId']}',style: AppTextStyles.style12_bold,
                           ),
                         ),
@@ -70,8 +71,8 @@ class _IdListScreenState extends State<IdListScreen> {
                       leading: const Icon(Icons.insert_drive_file_outlined),
                       title: Text(
                         'User: ${user['user']}',
-                        style: const TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
+                        style:  TextStyle(
+                            fontSize: 18.sp, fontWeight: FontWeight.bold),
                       ),
                       subtitle: Text('User ID: ${user['user_id']}'),
                     ),

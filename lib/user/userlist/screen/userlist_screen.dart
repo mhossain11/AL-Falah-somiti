@@ -1,11 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 
 class UsersListScreen extends StatelessWidget {
+
   final CollectionReference usersCollection = FirebaseFirestore.instance
       .collection('users');
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -37,19 +41,19 @@ class UsersListScreen extends StatelessWidget {
                 color: Colors.red.shade50,
                 child: SizedBox(
                   width: double.infinity,
-                  height: 30,
+                  height: 30.h,
                   child: Center(
                     child: Text(
                       'User Length:${users.length}',
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 16.sp,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
                 ),
               ),
-              SizedBox(height: 5),
+              SizedBox(height: 5.h),
               Expanded(
                 child: ListView.builder(
                   itemCount: users.length,
@@ -61,28 +65,28 @@ class UsersListScreen extends StatelessWidget {
                       children: [
                         Card(
                           elevation: 3,
-                          margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+                          margin:  EdgeInsets.symmetric(vertical: 8.h, horizontal: 12.w),
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15),
+                            borderRadius: BorderRadius.circular(15.r),
                           ),
                           child: Padding(
-                            padding: const EdgeInsets.all(12.0),
+                            padding:  EdgeInsets.all(12.0.r),
                             child: ListTile(
                               leading: CircleAvatar(
-                                radius: 25,
+                                radius: 25.r,
                                 backgroundColor: Colors.blue.shade100,
                                 child: const Icon(Icons.person, color: Colors.black87),
                               ),
                               title: Text(
                                 user['name'] ?? 'N/A',
-                                style: const TextStyle(
-                                  fontSize: 20,
+                                style:  TextStyle(
+                                  fontSize: 20.sp,
                                   fontWeight: FontWeight.bold,
                                   color: Colors.black87,
                                 ),
                               ),
                               subtitle: Padding(
-                                padding: const EdgeInsets.only(top: 8.0),
+                                padding: EdgeInsets.only(top: 8.0.r),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
@@ -112,11 +116,11 @@ class UsersListScreen extends StatelessWidget {
 
   Widget _infoRow(String label, dynamic value) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 2),
+      padding: EdgeInsets.symmetric(vertical: 2.h),
       child: Text(
         '$label: ${value ?? 'N/A'}',
-        style: const TextStyle(
-          fontSize: 14,
+        style:  TextStyle(
+          fontSize: 14.sp,
           color: Colors.grey,
           fontWeight: FontWeight.w500,
         ),

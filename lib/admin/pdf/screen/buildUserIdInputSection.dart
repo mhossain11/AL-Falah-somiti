@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'buildVerifiedUserContent.dart';
 
@@ -76,7 +77,7 @@ class _BuildUserIdInputSectionState extends State<BuildUserIdInputSection> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(20),
+      padding: EdgeInsets.all(20.r),
       child: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -84,21 +85,21 @@ class _BuildUserIdInputSectionState extends State<BuildUserIdInputSection> {
             Text(
               'Enter User Doc ID to Generate Report',
               style: TextStyle(
-                fontSize: 20,
+                fontSize: 20.sp,
                 fontWeight: FontWeight.bold,
                 color: Colors.green[700],
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 10.h),
             Text(
               'Please enter the user document ID to access financial data',
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: 14,
+                fontSize: 14.sp,
                 color: Colors.grey[600],
               ),
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 30.h),
             TextField(
               controller: _userIdController,
               decoration: InputDecoration(
@@ -120,15 +121,15 @@ class _BuildUserIdInputSectionState extends State<BuildUserIdInputSection> {
                 setState(() {});
               },
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 20.h),
             SizedBox(
               width: double.infinity,
-              height: 50,
+              height: 50.h,
               child: ElevatedButton.icon(
                 icon: Icon(Icons.verified_user),
                 label: Text(
                   'Verify User & Generate Report',
-                  style: TextStyle(fontSize: 16),
+                  style: TextStyle(fontSize: 16.sp),
                 ),
                 onPressed: _userIdController.text.trim().isEmpty
                     ? null
@@ -139,12 +140,12 @@ class _BuildUserIdInputSectionState extends State<BuildUserIdInputSection> {
                 ),
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 10.h),
             Text(
               'Note: You need a valid user document ID from Firebase',
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: 12,
+                fontSize: 12.sp,
                 color: Colors.grey[500],
               ),
             ),

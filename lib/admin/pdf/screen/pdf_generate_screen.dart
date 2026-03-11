@@ -17,7 +17,7 @@ class _UserMoneyScreenState extends State<UserMoneyScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Agragami Financial Report'),
+        title: Text('AL Falah Somiti'),
         backgroundColor: Colors.green,
         foregroundColor: Colors.white,
       ),

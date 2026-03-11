@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../cachehelper/chechehelper.dart';
 import '../../../cachehelper/toast.dart';
@@ -116,7 +117,7 @@ class _MoneyDeleteSimpleScreenState extends State<MoneyDeleteSimpleScreen> {
     return Scaffold(
       appBar: AppBar(title: const Text('Delete Money Record')),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding:  EdgeInsets.all(16.0.r),
         child: Column(
           children: [
             TextField(
@@ -126,7 +127,7 @@ class _MoneyDeleteSimpleScreenState extends State<MoneyDeleteSimpleScreen> {
                 border: OutlineInputBorder(),
               ),
             ),
-            const SizedBox(height: 16),
+             SizedBox(height: 16.h),
             TextField(
               controller: _moneyDocIdController,
               decoration: const InputDecoration(
@@ -134,19 +135,19 @@ class _MoneyDeleteSimpleScreenState extends State<MoneyDeleteSimpleScreen> {
                 border: OutlineInputBorder(),
               ),
             ),
-            const SizedBox(height: 24),
+             SizedBox(height: 24.h),
             SizedBox(
               width: double.infinity,
-              height: 50,
+              height: 50.h,
               child: ElevatedButton(
                 onPressed: _isLoading ? null : _deleteMoney,
                 child: _isLoading
                     ? const CircularProgressIndicator(
                   color: Colors.white,
                 )
-                    : const Text(
+                    :  Text(
                   'Delete',
-                  style: TextStyle(fontSize: 18),
+                  style: TextStyle(fontSize: 18.sp),
                 ),
               ),
             ),
